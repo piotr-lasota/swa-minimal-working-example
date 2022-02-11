@@ -1,0 +1,12 @@
+{
+  "name": "swa-demo-api",
+  "version": "1.0.0",
+  "description": "Minimal working example of an API",
+  "author": "Piotr Lasota",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

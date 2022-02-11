@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minimal Static Web App</title>
+    <script>
+        function refreshServerTime() {
+            const element = document.getElementById('server-response');
+
+            fetch('/api/time')
+                .then(response => response.json())
+                .then(({message}) => {
+                    element.style.backgroundColor = 'green';
+                    element.style.color = 'white';
+                    element.innerText = message;
+                })
+                .catch(() => {
+                    element.style.backgroundColor = 'lightred';
+                    element.innerText = 'Error happened'
+                })
+        }
+    </script>
+</head>
+<body>
+<p>This is an Azure Static Web App</p>
+<span>The server message is: </span><span id="server-response">Not requested</span>
+<button style="display: block;margin-top: 15px" onclick="refreshServerTime()">Get Time</button>
+</body>
+</html>
